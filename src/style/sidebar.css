@@ -1,0 +1,236 @@
+@import url('https://fonts.googleapis.com/css2?family=Albert+Sans:ital,wght@0,100..900;1,100..900&family=Annapurna+SIL:wght@400;700&family=Balsamiq+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Carattere&family=Gorditas:wght@400;700&family=Graduate&family=Indie+Flower&family=Kaushan+Script&family=Macondo&family=Mea+Culpa&family=Miltonian&family=Monsieur+La+Doulaise&family=Noto+Sans+Phoenician&family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Rubik+Bubbles&family=Satisfy&family=Splash&display=swap');
+
+
+* {
+    font-family: "Poppins", sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --body-color: #E4E9F7;
+    --sidebar-color: #FFF;
+    --primary-color: #e9d1ff;
+    --toggle-color: #585858;
+    --text-color: #4d4c4c;
+
+    /* ======= Transisciones ======= */
+
+    --tran-02: all 0.2s ease;
+    --tran-03: all 0.3s ease;
+    --tran-04: all 0.4s ease;
+    --tran-05: all 0.5s ease;
+}
+
+
+body {
+    height: 100vh;
+    background: var(--body-color);
+}
+
+
+ol,
+ul {
+    padding-left: 0%;
+}
+
+.custom-sidebar .custom-header {
+    position: relative;
+    margin-bottom: 10px;
+}
+
+.custom-sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 250px;
+    padding: 20px 14px;
+    background: var(--sidebar-color);
+    z-index: 100;
+    transition: var(--tran-05);
+}
+
+.custom-sidebar.close {
+    width: 88px;
+}
+
+
+.custom-sidebar .custom-text {
+    font-size: 15px;
+    font-weight: 500;
+    color: var(--text-color);
+    transition: var(--tran-03);
+    white-space: nowrap;
+    opacity: 1;
+}
+
+.custom-sidebar.close .custom-text {
+    opacity: 0;
+}
+
+.custom-sidebar .custon-image {
+    min-width: 60px;
+    display: flex;
+    align-items: center;
+}
+
+.custom-sidebar .custom-li {
+    height: 50px;
+    margin-top: 10px;
+    list-style: none;
+    display: flex;
+    align-items: center;
+
+}
+
+.custom-sidebar .custom-li .custom-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 60px;
+    font-size: 18px;
+
+}
+
+.custom-sidebar .custom-li .custom-icon,
+.custom-sidebar .custom-li .custom-text {
+    color: var(--text-color);
+    transition: var(--tran-02);
+}
+
+
+.custom-sidebar .custom-image-text img {
+    width: 60px;
+    border-radius: 6px;
+}
+
+.custom-sidebar .custom-header .custom-image-text {
+    display: flex;
+    align-items: center;
+}
+
+.custom-header .custom-image-text .custom-header-text {
+    display: flex;
+    flex-direction: column;
+}
+
+.custom-header-text .name {
+    font-weight: 600;
+}
+
+.custom-header-text .profession {
+    margin-top: -2px;
+}
+
+.custom-sidebar .custom-header .toggle {
+    padding: 8px 10px;
+    width: 30;
+    height: 30;
+    position: absolute;
+    top: 50%;
+    right: -25px;
+    transform: translateY(-50%);
+    background: var(--primary-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    font-size: 12px;
+}
+
+
+.custom-sidebar .custom-li .custom-a {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    border-radius: 10px;
+    transition: var(--tran-04);
+}
+
+.custom-sidebar .custom-li .custom-a:hover {
+    background: var(--primary-color);
+}
+
+.custom-sidebar .custom-li .custom-a:hover .custom-icon,
+.custom-sidebar .custom-li .custom-a:hover .custom-text {
+    color: #000000;
+}
+
+.custom-sidebar .custom-menu-bar {
+    height: calc(100% - 50px);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding-bottom: 30px;
+}
+
+.custom-home {
+    position: relative;
+    height: 100vh;
+    left: 250px;
+    width: calc(100% - 250px);
+    background-color: var(--body-color);
+    transition: var(--tran-05);
+}
+
+.custom-home .custom-text {
+    font-size: 30px;
+    font-weight: 500px;
+    color: var(--text-color);
+    padding: 8px 30px;
+}
+
+
+.custom-sidebar.close~.custom-home {
+    left: 88px;
+    width: calc(100% - 88px);
+}
+
+.custom-dashboard {
+    padding-right: 40px;
+    display: flex;
+    align-items: center;
+    align-content: center;
+    justify-content: end;
+    gap: 20px;
+    height: 80px;
+    width: 100%;
+    background: var(--sidebar-color);
+}
+
+.custom-dashboard-user {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.custom-dashboard-user .custom-dashboard-circle-user,
+img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+
+.custom-dashboard-text {
+    display: flex;
+    flex-direction: column;
+}
+
+.custom-dashboard .d-text {
+    font-size: 16px;
+    font-weight: 500;
+    color: var(--text-color);
+    transition: var(--tran-03);
+    white-space: nowrap;
+    opacity: 1;
+}
+
+.custom-dashboard-notif {
+    padding: 10px;
+    border-radius: 10px;
+    background: #faf7ff;
+}
