@@ -1,7 +1,9 @@
+import BuscarProducto from './components/BucarProducto';
+
 const Productos = (): JSX.Element => {
     return (
         <>
-            <h1>Productos</h1>
+            <BuscarProducto />
         </>
     );
 };

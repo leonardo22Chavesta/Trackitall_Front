@@ -11,9 +11,12 @@
 :root {
     --body-color: #E4E9F7;
     --sidebar-color: #FFF;
-    --primary-color: #e9d1ff;
-    --toggle-color: #585858;
+    /* --primary-color: #e9d1ff; */
+    --primary-color: #7d4a4a;
+    --toggle-color: #FFF;
+    /* --toggle-color: #585858; */
     --text-color: #4d4c4c;
+    /* --text-color: #4d4c4c; */
 
     /* ======= Transisciones ======= */
 
@@ -103,6 +106,8 @@ ul {
 
 .custom-sidebar .custom-image-text img {
     width: 60px;
+    height: auto;
+    padding-right: 10px;
     border-radius: 6px;
 }
 
@@ -157,7 +162,7 @@ ul {
 
 .custom-sidebar .custom-li .custom-a:hover .custom-icon,
 .custom-sidebar .custom-li .custom-a:hover .custom-text {
-    color: #000000;
+    color: #fff;
 }
 
 .custom-sidebar .custom-menu-bar {
@@ -192,6 +197,7 @@ ul {
 
 .custom-dashboard {
     padding-right: 40px;
+    margin-bottom: 20px;
     display: flex;
     align-items: center;
     align-content: center;
@@ -232,5 +238,6 @@ img {
 .custom-dashboard-notif {
     padding: 10px;
     border-radius: 10px;
-    background: #faf7ff;
+    /* background: var(--primary-color); */
+    color: var(--primary-color);
 }

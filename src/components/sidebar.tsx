@@ -11,6 +11,8 @@ import {
 import '../style/sidebar.css';
 import { faChevronRight } from '@fortawesome/free-solid-svg-icons/faChevronRight';
 import { useEffect, useState } from 'react';
+import logo from '../layouts/img/logo.png';
+import { Link } from 'react-router-dom';
 
 const Sidebar = (): JSX.Element => {
     const [isClosed, setIsClosed] = useState<boolean>(false);
@@ -46,11 +48,11 @@ const Sidebar = (): JSX.Element => {
                 <header className="custom-header">
                     <div className="custom-image-text">
                         <span className="custom-image">
-                            <img src="https://d1ih8jugeo2m5m.cloudfront.net/2022/12/que-es-un-logo-lays.png" />
+                            <img src={logo} />
                         </span>
 
                         <div className="custom-text custom-header-text">
-                            <span className="name"></span>
+                            <span className="name">La Bodega</span>
                             <span className="profession"></span>
                         </div>
                     </div>
@@ -58,7 +60,7 @@ const Sidebar = (): JSX.Element => {
                     <FontAwesomeIcon
                         icon={faChevronRight}
                         className="toggle"
-                        style={{ color: '#4d4c4c' }}
+                        style={{ color: '#fff' }}
                     />
                 </header>
 
@@ -72,10 +74,10 @@ const Sidebar = (): JSX.Element => {
                                 </a>
                             </li>
                             <li className="custom-li custom-nav-link">
-                                <a href="#" className="custom-a">
+                                <Link to="/productos" className="custom-a">
                                     <FontAwesomeIcon className="custom-icon" icon={faShop} />
                                     <span className="custom-text custom-nav-text">Productos</span>
-                                </a>
+                                </Link>
                             </li>
                             <li className="custom-li custom-nav-link">
                                 <a href="#" className="custom-a">
@@ -118,13 +120,13 @@ const Sidebar = (): JSX.Element => {
                     </div>
                     <div className="custom-bottom-content">
                         <li className="custom-li">
-                            <a href="#" className="custom-a">
+                            <Link className="custom-a" to="/login">
                                 <FontAwesomeIcon
                                     className="custom-icon"
                                     icon={faArrowRightFromBracket}
                                 />{' '}
                                 <span className="custom-text custom-nav-text">Salir</span>
-                            </a>
+                            </Link>
                         </li>
                     </div>
                 </div>
