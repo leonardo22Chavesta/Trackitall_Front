@@ -1,15 +1,11 @@
-import { Button } from 'react-bootstrap';
+import BuscarInventario from './components/BuscarInventario';
+import ListarInventario from './components/ListarInventario';
 
 const Inventario = (): JSX.Element => {
-    const me = 'd';
-
     return (
         <>
-            <h1>
-                <Button as="a" variant="primary">
-                    Button as link {me}
-                </Button>
-            </h1>
+            <BuscarInventario />
+            <ListarInventario />
         </>
     );
 };

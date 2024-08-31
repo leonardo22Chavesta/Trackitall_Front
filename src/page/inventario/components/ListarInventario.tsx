@@ -1,15 +1,9 @@
-import { faPenToSquare, faPlus, faTrash } from '@fortawesome/free-solid-svg-icons';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { useState } from 'react';
-import { Table, Card, Button, Col, Row } from 'react-bootstrap';
-import ModalEditProducto from './ModalEdictProducto';
+import { Button, Card, Table } from 'react-bootstrap';
 import { Producto } from '../../../models/ProductoInterface';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faPenToSquare, faTrash } from '@fortawesome/free-solid-svg-icons';
 
-const ListarProducto = (): JSX.Element => {
-    const [showModal, setShowModal] = useState<boolean>(true);
-
-    const openModal = (): void => setShowModal(false);
-
+const ListarInventario = (): JSX.Element => {
     const data: Producto[] = [
         {
             codigo: 98564882623,
@@ -71,28 +65,16 @@ const ListarProducto = (): JSX.Element => {
         <>
             <Card>
                 <Card.Header style={{ paddingTop: '20px', paddingBottom: '20px' }}>
-                    <div className="d-flex justify-content-between">
-                        <span className=" text-muted h3">Listar Productos</span>
-                        <Row>
-                            <Col xs={12}>
-                                <Button size="sm" variant="primary" onClick={openModal}>
-                                    <FontAwesomeIcon icon={faPlus} /> Agregar
-                                </Button>
-                            </Col>
-                        </Row>
-                    </div>
+                    <span className=" text-muted h3">Listar Inventario</span>
                 </Card.Header>
                 <Card.Body>
-                    <Table size="sm" align="center" striped bordered hover responsive>
+                    <Table size="sm" responsive align="center" striped bordered hover>
                         <thead>
                             <tr>
-                                <th>Codigo</th>
-                                <th>Nombre</th>
-                                <th>Categoria</th>
-                                <th>Precio de venta</th>
-                                <th className="text-center" style={{ width: '90px' }}>
-                                    Acciones
-                                </th>
+                                <th>Codigo del Producto</th>
+                                <th>Cantidad Inventario</th>
+                                <th>Ubicacion del Producto</th>
+                                <th>Action</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -103,12 +85,12 @@ const ListarProducto = (): JSX.Element => {
                                             <td>{index.codigo.toString()}</td>
                                             <td>{index.nombre}</td>
                                             <td>{index.categotia}</td>
-                                            <td>{index.precio.toString()}</td>
                                             <td className="text-center">
                                                 <Button
                                                     variant="outline-info"
                                                     size="sm"
-                                                    onClick={openModal}>
+                                                    // onClick={openModal}
+                                                >
                                                     <FontAwesomeIcon icon={faPenToSquare} />
                                                 </Button>{' '}
                                                 <Button variant="outline-danger" size="sm">
@@ -123,9 +105,7 @@ const ListarProducto = (): JSX.Element => {
                     </Table>
                 </Card.Body>
             </Card>
-
-            <ModalEditProducto showModal={showModal} setShowModal={setShowModal} />
         </>
     );
 };
-export default ListarProducto;
+export default ListarInventario;

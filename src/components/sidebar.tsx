@@ -53,7 +53,7 @@ const Sidebar = (): JSX.Element => {
 
                         <div className="custom-text custom-header-text">
                             <span className="name">La Bodega</span>
-                            <span className="profession"></span>
+                            {/* <span className="profession"></span> */}
                         </div>
                     </div>
 
@@ -80,13 +80,13 @@ const Sidebar = (): JSX.Element => {
                                 </Link>
                             </li>
                             <li className="custom-li custom-nav-link">
-                                <a href="#" className="custom-a">
+                                <Link to="/inventario" className="custom-a">
                                     <FontAwesomeIcon
                                         className="custom-icon"
                                         icon={faBoxesPacking}
-                                    />{' '}
+                                    />
                                     <span className="custom-text custom-nav-text">Inventario</span>
-                                </a>
+                                </Link>
                             </li>
                             <li className="custom-li custom-nav-link">
                                 <a href="#" className="custom-a">
